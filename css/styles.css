@@ -24,6 +24,7 @@
   --time-function: cubic-bezier(0.4, 0, 0.2, 1);
   --input-border: rgba(33, 33, 33, 0.2);
   --accent-color-hover: #188ce8;
+  --header-border-color: #ececec;
 }
 
 body {
@@ -44,6 +45,20 @@ body {
   padding: 0;
 }
 
+.link {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
 .container {
   margin-left: auto;
   margin-right: auto;
@@ -54,8 +69,17 @@ body {
 }
 
 /* --Header-- */
-.menu-border {
-  border-bottom: 1px solid #ececec;
+.header {
+  border-bottom: 1px solid var(--header-border-color);
+}
+
+.header__container {
+  display: flex;
+}
+
+.header__nav {
+  display: flex;
+  margin-right: auto;
 }
 
 .logo {
@@ -72,7 +96,7 @@ body {
   text-decoration: none;
 }
 
-.logo-accent {
+.logo__accent {
   color: var(--accent-color);
 }
 
@@ -81,19 +105,13 @@ body {
 }
 
 /* site nav */
-.link {
-  text-decoration: none;
-}
 
-.site-nav {
+.header__site-nav {
   display: flex;
+  gap: 50px;
 }
 
-.site-nav .item + .item {
-  margin-left: 50px;
-}
-
-.site-nav .link {
+.header__site-nav .link {
   position: relative;
   display: block;
   padding-top: 32px;
@@ -108,7 +126,7 @@ body {
     color 250ms var(--time-function);
 }
 
-.site-nav .link::after {
+.header__site-nav .link::after {
   display: block;
   position: absolute;
   opacity: 0;
@@ -123,41 +141,31 @@ body {
   content: "";
 }
 
-.site-nav .link:hover::after,
-.site-nav .link:focus::after,
-.site-nav .link.current::after {
+.header__site-nav .link:hover::after,
+.header__site-nav .link:focus::after,
+.header__site-nav .link.current::after {
   opacity: 1;
   color: var(--accent-color);
 }
 
-.site-nav .link:hover,
-.site-nav .link:focus {
+.header__site-nav .link:hover,
+.header__site-nav .link:focus {
   color: var(--accent-color);
 }
 
-.site-nav .link.current {
+.header__site-nav .link.current {
   color: var(--accent-color);
 }
 
-.nav-element {
+.header__contact-firm {
   display: flex;
-  margin-right: auto;
+  gap: 30px;
 }
 
-.contact-firm {
+.header__contact-firm .link {
   display: flex;
-}
-
-.menu-container {
-  display: flex;
-}
-
-.contact-firm .item + .item {
-  margin-left: 30px;
-}
-
-.contact-firm .link {
-  display: block;
+  align-items: center;
+  justify-content: center;
   padding-top: 32px;
   padding-bottom: 32px;
 
@@ -174,8 +182,8 @@ body {
   fill: currentColor;
 }
 
-.contact-firm .link:hover,
-.contact-firm .link:focus {
+.header__contact-firm .link:hover,
+.header__contact-firm .link:focus {
   color: var(--accent-color);
 }
 
@@ -185,6 +193,23 @@ body {
   text-align: center;
   padding-top: 200px;
   padding-bottom: 200px;
+}
+
+.hero__title {
+  margin-top: 0;
+  margin-bottom: 30px;
+  color: var(--primary-white-color);
+  font-weight: 900;
+  font-size: 44px;
+  line-height: 1.36;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.hero__container {
+  max-width: 696px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* --Overlay-- */
@@ -204,28 +229,9 @@ body {
   background-size: cover;
 }
 
-.hero-title {
-  margin-top: 0;
-  margin-bottom: 30px;
-  color: var(--primary-white-color);
-  font-weight: 900;
-  font-size: 44px;
-  line-height: 1.36;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-.hero-container {
-  max-width: 696px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 /*  Секції */
 
-.section,
-.section-work,
-.section-team {
+.section {
   padding-top: 94px;
   padding-bottom: 94px;
 }
@@ -264,11 +270,11 @@ body {
 .rectangle-link {
   margin-top: 0px;
   margin-bottom: 30px;
-  background: #f5f4fa;
+  background: var(--ashy-color);
 
   width: 270px;
   height: 120px;
-  border: 1px solid #f5f4fa;
+  border: 1px solid var(--ashy-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -371,12 +377,6 @@ body {
 .section-team p {
   margin-top: 0;
   margin-bottom: 0;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
 }
 
 /* --net-icon-- */
@@ -516,6 +516,12 @@ img {
 
 .adress {
   color: var(--primary-white-color);
+  transition: color 250ms var(--time-function);
+}
+
+.adress:hover,
+.adress:focus {
+  color: var(--accent-color);
 }
 
 .site-footer .link {
@@ -595,10 +601,6 @@ img {
 .form-control-sign {
   display: flex;
   gap: 10px;
-}
-
-input::placeholder {
-  color: rgba(255, 255, 255, 0.6);
 }
 
 .form-input-sign {
