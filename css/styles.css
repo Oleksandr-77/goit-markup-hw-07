@@ -25,6 +25,8 @@
   --input-border: rgba(33, 33, 33, 0.2);
   --accent-color-hover: #188ce8;
   --header-border-color: #ececec;
+  --hero-overlay: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url("../images/new_photo.jpg");
 }
 
 body {
@@ -81,28 +83,6 @@ input::placeholder {
 .header__nav {
   display: flex;
   margin-right: auto;
-}
-
-.logo {
-  display: block;
-  padding-top: 24px;
-  padding-bottom: 25px;
-  margin-right: 93px;
-
-  color: var(--black-color);
-  font-weight: 700;
-  font-family: Raleway;
-  font-size: 26px;
-  line-height: 1.2;
-  text-decoration: none;
-}
-
-.logo__accent {
-  color: var(--accent-color);
-}
-
-.logo :focus {
-  color: var(--accent-color);
 }
 
 /* site nav */
@@ -184,6 +164,28 @@ input::placeholder {
   color: var(--accent-color);
 }
 
+.logo {
+  display: block;
+  padding-top: 24px;
+  padding-bottom: 25px;
+  margin-right: 93px;
+
+  color: var(--black-color);
+  font-weight: 700;
+  font-family: Raleway;
+  font-size: 26px;
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+.logo__accent {
+  color: var(--accent-color);
+}
+
+.logo :focus {
+  color: var(--accent-color);
+}
+
 /*-- Герой */
 .hero {
   background-color: var(--block-color);
@@ -216,11 +218,12 @@ input::placeholder {
   margin-left: auto;
   margin-right: auto;
   outline: 1px solid #c4c4c4;
-  background-image: linear-gradient(
+  background-image: var(--hero-overlay);
+  /* background-image: linear-gradient(
       rgba(47, 48, 58, 0.4),
       rgba(47, 48, 58, 0.4)
     ),
-    url("../images/new_photo.jpg");
+    url("../images/new_photo.jpg"); */
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -285,10 +288,6 @@ input::placeholder {
 }
 
 /* -- Чим ми займаємося -- */
-/* .section-work {
-  padding-top: 0;
-} */
-
 .work__list {
   display: flex;
   gap: 30px;
