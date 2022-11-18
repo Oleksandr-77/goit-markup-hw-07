@@ -26,6 +26,13 @@
     transition: opasity 250ms var(--time-function),
       color 250ms var(--time-function);
   }
+
+  .nav__link:hover,
+  .nav__link:focus,
+  .nav__link--current {
+    color: var(--accent-color);
+  }
+  
   
   .nav__link::after {
     display: block;
@@ -42,16 +49,11 @@
     content: "";
   }
   
-  &:hover::after,
-  &:focus::after,
+  .nav__link:hover::after,
+  .nav__link:focus::after,
   .nav__link--current::after {
     opacity: 1;
     color: var(--accent-color);
   }
   
-  &:hover,
-  &:focus,
-  .nav__link--current {
-    color: var(--accent-color);
-  }
   

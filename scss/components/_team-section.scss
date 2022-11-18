@@ -56,8 +56,8 @@
       background-color 250ms var(--time-function);
   }
   
-  &:hover,
-  &:focus {
+  .net__link:hover,
+  .net__link:focus {
     background-color: var(--accent-color);
     fill: var(--primary-white-color);
   }

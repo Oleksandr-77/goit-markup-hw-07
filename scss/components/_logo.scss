@@ -13,11 +13,12 @@
   
   .logo__accent {
     color: var(--accent-color);
-  }
+  
   
   &:focus {
     color: var(--accent-color);
   }
+}
   
   .logo__light {
     color: var(--primary-white-color);
