@@ -48,7 +48,7 @@
     transform: translate(-50%, -50%);
   }
   
-  .button-close:hover .button-close__icon,
-  .button-close:focus .button-close__icon {
+  .button-close:hover &,
+  .button-close:focus & {
     fill: var(--accent-color);
   }

@@ -20,8 +20,8 @@
       background-color 250ms var(--time-function);
   }
   
-  .primary-button:hover,
-  .primary-button:focus {
+  &:hover,
+  &:focus {
     border: 0px 4px 4px rgb(0 0 0 / 15%);
     background-color: var(--accent-color-hover);
   }
@@ -45,8 +45,8 @@
       background-color 250ms var(--time-function);
   }
   
-  .secondary-button:hover,
-  .secondary-button:focus {
+  &:hover,
+  &:focus {
     color: var(--primary-white-color);
     background-color: var(--accent-color);
     border: 1px solid var(--accent-color);

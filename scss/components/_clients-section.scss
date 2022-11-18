@@ -21,8 +21,8 @@
     transition: fill 250ms var(--time-function), border 250ms var(--time-function);
   }
   
-  .clients__link:hover,
-  .clients__link:focus {
+  &:hover,
+  &:focus {
     border: 1px solid var(--accent-color);
     fill: var(--accent-color);
   }
